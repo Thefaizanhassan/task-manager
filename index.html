@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag & Drop Task Manager</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/additional-styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-white to-purple-50 min-h-screen p-4">
+    <div class="container mx-auto">
+        <h1 class="text-4xl font-bold text-center mb-8 text-gray-800 tracking-tight">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-500">
+                Task Manager
+            </span>
+        </h1>
+        
+        <!-- Task Creation Form -->
+        <div class="mb-8 bg-white/80 backdrop-filter backdrop-blur-sm p-6 rounded-xl shadow-lg">
+            <h2 class="text-xl font-semibold mb-4 text-gray-700">Create New Task</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <input type="text" id="taskInput" placeholder="What needs to be done?" 
+                       class="flex-grow p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
+                <select id="taskPriority" class="p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200">
+                    <option value="low">Low Priority</option>
+                    <option value="medium" selected>Medium Priority</option>
+                    <option value="high">High Priority</option>
+                </select>
+                <button id="addTaskBtn" class="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:-translate-y-0.5 hover:shadow-lg pulse">
+                    Add Task
+                </button>
+            </div>
+        </div>
+        
+        <!-- Task Columns Container -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- To Do Column -->
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="bg-gray-200 p-3 rounded-t-lg">
+                    <h2 class="text-lg font-semibold text-gray-700">To Do</h2>
+                </div>
+                <div id="todo-column" class="task-column p-3 min-h-[300px]" 
+                     ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)" data-column="todo">
+                    <!-- Task cards will be added here -->
+                </div>
+            </div>
+            
+            <!-- In Progress Column -->
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="bg-gray-200 p-3 rounded-t-lg">
+                    <h2 class="text-lg font-semibold text-gray-700">In Progress</h2>
+                </div>
+                <div id="inprogress-column" class="task-column p-3 min-h-[300px]" 
+                     ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)" data-column="inprogress">
+                    <!-- Task cards will be added here -->
+                </div>
+            </div>
+            
+            <!-- Done Column -->
+            <div class="bg-white rounded-lg shadow-md">
+                <div class="bg-gray-200 p-3 rounded-t-lg">
+                    <h2 class="text-lg font-semibold text-gray-700">Done</h2>
+                </div>
+                <div id="done-column" class="task-column p-3 min-h-[300px]" 
+                     ondragover="allowDrop(event)" ondrop="drop(event)" ondragleave="dragLeave(event)" data-column="done">
+                    <!-- Task cards will be added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
