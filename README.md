@@ -12,9 +12,17 @@ A simple, sleek task management program that puts the might of drag-and-drop ord
 
 A modern, intuitive task management application with drag-and-drop functionality, inspired by Trello.
 
+![Screenshot](screenshots/demo.png)
+
 [Demo](#) • [Features](#features) • [Installation](#installation) • [Usage](#usage) • [Contributing](#contributing)
 
 </div>
+
+## 💡 Key Benefits
+- **Simple & Intuitive**: Get started in seconds with no learning curve
+- **No Installation Required**: Works directly in your browser
+- **Free & Open Source**: Use and modify as you need
+- **Privacy-Focused**: All data stored locally in your browser
 
 ## ✨ Features
 
@@ -158,5 +166,5 @@ Having issues? Let us know:
 ---
 
 <div align="center">
-Made with ❤️ by [Faizan Hassan]
+Made with ❤️ by <a href="https://github.com/thefaizanhassan">Faizan Hassan</a>
 </div>
